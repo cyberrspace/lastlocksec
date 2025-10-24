@@ -4,14 +4,8 @@ import Image from "next/image";
 
 export default function SignNav() {
   return (
-    <nav
-      className="
-        flex items-center justify-between
-        w-full
-        px-6 sm:px-10 md:px-16 lg:px-20
-        py-4 sm:py-6 md:py-8
-      "
-    >
+    <nav className="flex items-center justify-between  w-full px-6 sm:px-6 md:px-16 lg:px-20 py-4 sm:py-6 md:py-8 box-border">
+
       {/* Logo + Text */}
       <div
         className="

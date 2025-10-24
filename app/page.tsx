@@ -8,11 +8,11 @@ export default function Home() {
   return (
     <ContentWrapper>
       <main
-        className="
+        className="  
           flex flex-col 
           min-h-screen 
           w-full 
-          relative
+          relative 
         "
       >
         {/* Navbar */}

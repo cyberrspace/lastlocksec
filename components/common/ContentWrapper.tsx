@@ -6,14 +6,13 @@ export default function ContentWrapper({ children }: { children: ReactNode }) {
   return (
     <div
       className="
-        w-full 
-        min-h-screen 
-        bg-cover 
-        bg-center 
-        bg-no-repeat
-        flex flex-col
-        px-4 sm:px-6 md:px-8
-      "
+        w-full min-h-screen
+    bg-cover bg-center bg-no-repeat
+    flex flex-col
+    px-4 sm:px-6 md:px-8
+    overflow-x-hidden
+    box-border
+  "
       style={{
         backgroundImage: "url('/icon/lastframe.png')",
         backgroundSize: "cover",
