@@ -18,9 +18,7 @@ export default function Home() {
         {/* Navbar */}
         <div
           className="
-            pt-[16px] sm:pt-[20px] md:pt-[23px] 
-            px-[20px] sm:px-6 md:px-10 xl:px-[78px]
-            w-full
+           w-full max-w-[100vw] overflow-x-hidden mx-auto
           "
         >
           <SignNav />
