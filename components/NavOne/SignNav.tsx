@@ -15,7 +15,7 @@ export default function SignNav() {
       "
     >
       {/* Logo + Text */}
-      <div className="flex items-center gap-2 sm:gap-4">
+      <div className="flex items-center gap-[10px] sm:gap-4">
         <Image
           src="/icon/locksec-bg.png"
           alt="locksec logo"
@@ -23,7 +23,7 @@ export default function SignNav() {
           height={40}
           className="object-contain w-[32px] h-[32px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px]"
         />
-        <h1 className="text-[20px] sm:text-[26px] md:text-[30px] font-bold text-black">
+        <h1 className="text-[32px] sm:text-[26px] md:text-[30px] font-bold text-black">
           Loc<span className="text-[#1D61E7]">Sec</span>
         </h1>
       </div>
