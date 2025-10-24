@@ -11,6 +11,7 @@ export default function ContentWrapper({ children }: { children: ReactNode }) {
         bg-cover 
         bg-center 
         bg-no-repeat
+        flex flex-col
         px-4 sm:px-6 md:px-8
       "
       style={{
@@ -19,14 +20,7 @@ export default function ContentWrapper({ children }: { children: ReactNode }) {
         backgroundPosition: "center",
       }}
     >
-      <div
-        className="
-          w-full 
-          max-w-[1440px] 
-          h-auto"
-      >
-        {children}
-      </div>
+      <div className="w-full max-w-[1440px] mx-auto">{children}</div>
     </div>
   );
 }

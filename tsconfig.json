@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -25,7 +25,16 @@
       {
         "name": "next"
       }
-    ]
+    ],
+   
+    "ignoreDeprecations": "6.0",
+    
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -36,6 +45,9 @@
     ".next\\dev/types/**/*.ts"
   ],
   "exclude": [
+
     "node_modules"
   ]
 }
+
+
