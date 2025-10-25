@@ -31,7 +31,7 @@ export default function Home() {
             flex 
             items-center 
             justify-center 
-            px-4 sm:px-6 md:px-10
+           
           ">
           <SignForm />
         </div>

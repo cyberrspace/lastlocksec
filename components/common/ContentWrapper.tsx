@@ -8,8 +8,8 @@ export default function ContentWrapper({ children }: { children: ReactNode }) {
       className="
         w-full min-h-screen 
         bg-cover bg-center bg-no-repeat 
-        flex flex-col 
-        overflow-x-hidden 
+        flex 
+       px-[50px]
         box-border
       "
       style={{
