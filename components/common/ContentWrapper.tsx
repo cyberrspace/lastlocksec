@@ -19,7 +19,7 @@ export default function ContentWrapper({ children }: { children: ReactNode }) {
       }}
     >
       {/* Remove side padding here and handle padding within each section instead */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 md:px-6 lg:px-10">{children}</div>
+      <div className="w-full max-w-[1440px]">{children}</div>
     </div>
   );
 }
