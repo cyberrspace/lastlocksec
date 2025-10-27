@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import defaultTheme from "tailwindcss/defaultTheme"
 import tailwindcssAnimate from "tailwindcss-animate"
 
 const config: Config = {
@@ -12,7 +13,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: "#1D61E7", // your theme color
+        ...defaultTheme.colors, 
+        brand: "#1D61E7",       
       },
     },
   },
