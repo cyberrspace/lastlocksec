@@ -8,7 +8,7 @@ export default function SignNav() {
       className="
         flex items-center justify-between 
         w-full max-w-[100vw]
-        px-3 sm:px-4 md:px-8 
+        px-[30px] sm:px-4 md:px-8 
         py-4 sm:py-5 md:py-6 
         box-border 
         overflow-x-hidden
