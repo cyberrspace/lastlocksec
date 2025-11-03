@@ -25,9 +25,9 @@ export default function SignForm() {
         </div>
 
         {/* Form */}
-        <form className=" space-y-[16px] sm:space-y-[20px] w-full">
+        <form className="space-y-[16px] sm:space-y-[20px] w-full  flex flex-col">
           {/* Email */}
-          <div className="w-full">
+          <div className="w-full max-w-[426px]">
             <div className="pb-[8px] sm:pb-[10px] text-[#FFFFFF] text-[13px] sm:text-[14px]">
               Email Address
             </div>
@@ -46,7 +46,7 @@ export default function SignForm() {
           </div>
 
           {/* Password */}
-          <div className="w-full">
+          <div className="w-full max-w-[426px] ">
             <div className="pb-[8px] sm:pb-[10px] text-[#FFFFFF] text-[13px] sm:text-[14px]">
               Your Password
             </div>
@@ -76,7 +76,7 @@ export default function SignForm() {
           </div>
 
           {/* Remember / Forgot */}
-          <div className="w-full flex flex-row sm:flex-col justify-between sm:items-center space-x-[14px] sm:justify-between text-[12px] sm:text-[13px] mt-[-6px] sm:mt-[-10px] gap-2 sm:gap-0 text-center sm:text-left relative">
+          <div className="w-full flex flex-row sm:flex-col justify-between sm:items-center space-x-[8px] sm:justify-between text-[12px] sm:text-[13px] mt-[-6px] sm:mt-[-10px] gap-2 sm:gap-0 text-center sm:text-left relative">
             <label className="flex items-center justify-center sm:justify-start text-[#D1D1D1]">
               <input type="checkbox" className="accent-[#1D61E7]" />
               <span className="ml-2">Remember me</span>
@@ -85,18 +85,19 @@ export default function SignForm() {
             <a
               type="button"
               onClick={() => router.push("/forgot-password")}
-              className="text-[#1D61E7] absolute -right-[30px]"
+              className="text-[#1D61E7] mr-[35px] "
             >
               Forgot password?
             </a>
           </div>
 
-          <div className="w-full space-y-[15px]">
-            {/* ✅ Sign In */}
+          <div className="w-full space-y-[15px] mx-auto">
+           
             <Button
               type="button"
               onClick={() => router.push("/dashboard")}
               className="
+              max-w-[465px] 
               w-full
               h-[44px] sm:h-[46px]
               bg-[#1D61E7]
@@ -114,7 +115,7 @@ export default function SignForm() {
             <Button
               type="button"
               onClick={() => router.push("/signup")}
-              className="text-[13px] sm:text-[14px] flex justify-center items-center text-[#FFFFFF] hover:underline bg-transparent border-none p-0 mx-auto"
+              className="text-[13px] sm:text-[14px] flex flex-col justify-center items-center text-[#FFFFFF] hover:underline bg-transparent border-none p-0 mx-auto"
             >
               Create Account
             </Button>
