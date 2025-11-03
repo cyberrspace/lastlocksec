@@ -115,7 +115,7 @@ export default function SignForm() {
             <Button
               type="button"
               onClick={() => router.push("/signup")}
-              className="text-[13px] sm:text-[14px] flex flex-col justify-center items-center text-[#FFFFFF] hover:underline bg-transparent border-none p-0 mx-auto"
+              className="text-[13px] sm:text-[14px] flex flex-col justify-center items-center text-[#FFFFFF] hover:underline bg-transparent border-none p-0 mx-auto pr-[35px]"
             >
               Create Account
             </Button>
