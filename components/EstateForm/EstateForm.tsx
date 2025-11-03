@@ -7,9 +7,9 @@ export default function EstateForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <section className="min-h-[692px] bg-[#2C2C2C] flex justify-center items-center  w-[520px] rounded-[10px]">
-      <main className="bg-white p-[20px] rounded-xl flex flex-col justify-start items-center">
-        <h2 className="text-[36px] font-bold text-center text-[#F5F5F5]">
+    <section className="min-h-[692px] bg-[#2C2C2C] flex justify-center items-center  w-[520px] sm:w-[520px] p-4 sm:p-0 rounded-[10px]">
+      <main className="bg-white p-[20px]  sm:p-[50px] rounded-xl flex flex-col justify-start items-center">
+        <h2 className="text-[36px] sm:text-[36px] font-bold text-center text-[#F5F5F5]">
           Create Estate Account
         </h2>
 
@@ -93,7 +93,7 @@ export default function EstateForm() {
           </div>
 
           {/* Remember + Forgot */}
-          <div className="flex justify-between text-sm">
+          <div className="flex justify-between sm:flex-row sm:justify-between sm:items-center text-sm">
             <label className="flex items-center gap-2 text-[#F5F5F5]">
               <input
                 type="checkbox"

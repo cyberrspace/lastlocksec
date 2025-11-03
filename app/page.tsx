@@ -18,8 +18,8 @@ export default function Home() {
         {/* Navbar */}
         <div
           className="
-           w-full max-w-[100vw] overflow-x-hidden mx-auto
-          "
+           w-full max-w-[100vw] overflow-x-hidden mx-auto px-4 sm:px-6 md:px-10  px-4 sm:px-6 md:px-0 
+                py-10 sm:py-14 md:py-0"
         >
           <SignNav />
         </div>
@@ -31,6 +31,8 @@ export default function Home() {
             flex 
             items-center 
             justify-center 
+            sm:max-w-[520px] 
+            md:max-w-[600px]   
            
           ">
           <SignForm />
