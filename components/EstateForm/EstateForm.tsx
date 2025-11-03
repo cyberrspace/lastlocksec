@@ -7,7 +7,7 @@ export default function EstateForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <section className="min-h-[692px] bg-[#2C2C2C] flex justify-center items-center  w-[520px] sm:w-[520px] p-4 sm:p-0 rounded-[10px]">
+    <section className="min-h-[692px] bg-[#2C2C2C] flex justify-center items-center  w-full sm:w-[520px] p-4 sm:p-0 rounded-[10px]">
       <main className="bg-white p-[20px]  sm:p-[50px] rounded-xl flex flex-col justify-start items-center">
         <h2 className="text-[36px] sm:text-[36px] font-bold text-center text-[#F5F5F5]">
           Create Estate Account
@@ -33,7 +33,7 @@ export default function EstateForm() {
           <div>
             <label className="text-[#F5F5F5] text-sm font-medium">Full Name</label>
             <div className="relative mt-[6px]">
-              <User className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]" />
+              <User className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]"/>
               <input
                 type="text"
                 placeholder="Enter full name"
