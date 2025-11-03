@@ -84,8 +84,8 @@ export default function SignForm() {
 
             <a
               type="button"
-              onClick={() => router.push("/forgot-password")}
-              className="text-[#1D61E7] mr-[35px] "
+              onClick={() => router.push("/forgotpassword")}
+              className="text-[#1D61E7] mr-[35px] cursor-pointer"
             >
               Forgot password?
             </a>
