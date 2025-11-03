@@ -23,7 +23,7 @@ export default  function signupPage(){
           >
             <NavTwo/>
           </div>
-           <div className="mt-[50px]">
+           <div className="mt-[50px] flex items-center justify-center">
             <EstateForm/>
            </div>
          
