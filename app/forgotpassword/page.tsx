@@ -16,7 +16,7 @@ export default function ForgotPasswordPage() {
       >
         {/* Navbar */}
         <div className="w-full max-w-[100vw] overflow-x-hidden">
-          <SignNav />
+          <SignNav/>
         </div>
 
         {/* Forgot Password Form Section */}

@@ -1,19 +1,21 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import BackButton from "../common/BackButton";
 import { Mail } from "lucide-react";
 import { Button } from "../ui/button";
 
 export default function ForgotPassword() {
+  const router = useRouter();
+
   return (
-    <main className="w-full max-w-[512px] h-screen flex flex-col justify-center items-center bg-black px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] overflow-hidden">
+    <main className="w-full max-w-[512px] sm:min-h-[692px]  min-h-screen flex flex-col justify-center items-center bg-black px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] overflow-hidden">
       {/* Back Button */}
-      <div className="w-full max-w-full sm:max-w-[512px] mb-[8px] sm:mb-[5px] mr-[0px] sm:mr-[5rem]">
+      <div className="w-full max-w-full sm:max-w-[512px] mb-[8px] sm:mb-[5px]">
         <BackButton />
       </div>
 
       {/* Form Card */}
-      <section className="w-full max-w-full sm:max-w-[90%] md:max-w-[612px] bg-[#2C2C2C] rounded-[12px] py-[16px] sm:py-[10px] px-[16px] sm:px-[20px] md:px-[32px] flex flex-col items-center text-center space-y-[16px] sm:space-y-[15px] md:space-y-[24px]">
+      <section className="w-full max-w-full sm:max-w-[90%] md:max-w-[612px] bg-[#2C2C2C] rounded-[12px] py-[16px] sm:py-[10px] px-[16px] sm:px-[20px] md:px-[32px] flex flex-col items-center text-center space-y-[22px] sm:space-y-[21px] md:space-y-[33px]">
       
         {/* Title */}
         <h1 className="text-[32px] xs:text-[36px] sm:text-[42px] md:text-[26px] lg:text-[30px] font-bold text-[#F5F5F5] leading-tight">
@@ -64,8 +66,10 @@ export default function ForgotPassword() {
           </div>
         </div>
 
-        <div className="w-full max-w-full sm:max-w-[426px] h-[40px] ">
-          <Button className="w-full h-[38px] xs:h-[40px] sm:h-[43px] text-[14px] xs:text-[16px] rounded-[10px]">
+        <div className="w-full max-w-full sm:max-w-[426px] h-[40px] mt-[20px] mb-[20px] ">
+          <Button 
+            onClick={() => router.push("/verify")}
+            className="w-full bg-[#102DC8] h-[38px] xs:h-[40px] sm:h-[43px] text-[14px] xs:text-[16px] rounded-[10px]">
             Verify
           </Button>
         </div>

@@ -7,7 +7,7 @@ export default function EstateForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <section className="min-h-screen  max-w-[512px] sm:min-h-[692px] bg-[#2C2C2C] flex justify-center items-center w-full p-[16px] sm:p-0 rounded-[10px]">
+    <section className="min-h-[600px]  max-w-[512px] sm:min-h-[692px] bg-[#2C2C2C] flex justify-center items-center w-full p-[16px] sm:p-0 rounded-[10px]">
       <main className="bg-white p-[16px] xs:p-[20px] sm:p-[32px] md:p-[50px] rounded-[12px] flex flex-col justify-start items-center w-full max-w-full xs:max-w-[400px] sm:max-w-[450px] md:max-w-[520px]">
         <h2 className="text-[28px] xs:text-[32px] sm:text-[34px] md:text-[36px] font-bold text-center text-[#F5F5F5]">
           Create Estate Account
@@ -92,30 +92,20 @@ export default function EstateForm() {
             </div>
           </div>
 
-          {/* Remember + Forgot */}
-          <div className="flex justify-between items-center text-[12px] xs:text-sm">
-            <label className="flex items-center gap-[8px] text-[#F5F5F5]">
-              <input
-                type="checkbox"
-                className="cursor-pointer accent-[#F5F5F5] bg-transparent border border-[#F5F5F5]"
-              />
-              Remember me
-            </label>
-            <a href="#" className="text-[#F5F5F5] font-medium">Forgot password?</a>
-          </div>
+         
 
           {/* Submit */}
-          <button
+         <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white h-[38px] xs:h-[40px] rounded-[8px] font-medium w-full mt-6 xs:mt-[30px] text-[13px] xs:text-sm"
+            className="bg-[#102DC8] hover:bg-blue-700 text-[#FFFFFF] h-[38px] xs:h-[40px] rounded-[8px] font-medium w-full mt-[20px] xs:mt-[30px] text-[13px] xs:text-sm"
           >
             Create Account
           </button>
 
           {/* Switch */}
           <p className="text-center text-[12px] xs:text-sm pt-2 text-gray-600">
-            Already have an account?
-            <a href="#" className="text-blue-600 font-semibold ml-1">Sign In</a>
+           
+            <a href="#" className="text-[#FFFFFF] font-semibold ml-1">Sign In</a>
           </p>
         </form>
       </main>

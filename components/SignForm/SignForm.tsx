@@ -8,18 +8,18 @@ export default function SignForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <section className="w-full min-h-screen  max-w-[512px] sm:min-h-[692px] flex justify-center items-center bg-[#2C2C2C] rounded-[12px] px-[16px] sm:px-[24px] md:px-[32px] lg:px-0">
+    <section className="w-full min-h-[544px] max-w-[512px] sm:min-h-[692px] flex justify-center items-center bg-[#2C2C2C] rounded-[12px] px-[54px] sm:px-[64px] md:px-[40px] lg:px-0">
       <main className="w-full max-w-full sm:max-w-[500px] border-[#3D3D3D] sm:px-[24px] md:px-[32px] lg:px-[40px] py-[32px] sm:py-[40px] flex flex-col items-center justify-center space-y-[20px] sm:space-y-[20px]">
 
         {/* Title */}
         <div className="flex flex-col items-center text-center text-[#F5F5F5] space-y-[12px] sm:space-y-[14px] md:space-y-[18px] lg:space-y-[20px] w-full max-w-full sm:max-w-[426px]">
-          <span className="text-[20px] xs:text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px] xl:text-[38px] font-bold leading-tight">
+          <span className="text-[36px] xs:text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px] xl:text-[38px] font-bold leading-tight">
             Sign in
           </span>
-          <span className="text-[18px] xs:text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-bold leading-tight">
+          <span className="text-[36px] xs:text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-bold leading-tight">
             to your estate account
           </span>
-          <span className="text-[11px] xs:text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] text-[#D1D1D1]">
+          <span className="text-[18px] xs:text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] text-[#D1D1D1]">
             Enter your details to proceed
           </span>
         </div>
@@ -93,7 +93,7 @@ export default function SignForm() {
             </a>
           </div>
 
-          <div className="w-full space-y-4 sm:space-y-[15px] mx-auto">
+          <div className="w-full space-y-[20px] sm:space-y-[35px] mx-auto mt-[20px]">
 
             <Button
               type="button"
