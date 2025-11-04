@@ -7,23 +7,23 @@ export default function EstateForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <section className="min-h-[692px] bg-[#2C2C2C] flex justify-center items-center  w-full sm:w-[520px] p-4 sm:p-0 rounded-[10px]">
-      <main className="bg-white p-[20px]  sm:p-[50px] rounded-xl flex flex-col justify-start items-center">
-        <h2 className="text-[36px] sm:text-[36px] font-bold text-center text-[#F5F5F5]">
+    <section className="min-h-screen  max-w-[512px] sm:min-h-[692px] bg-[#2C2C2C] flex justify-center items-center w-full p-[16px] sm:p-0 rounded-[10px]">
+      <main className="bg-white p-[16px] xs:p-[20px] sm:p-[32px] md:p-[50px] rounded-[12px] flex flex-col justify-start items-center w-full max-w-full xs:max-w-[400px] sm:max-w-[450px] md:max-w-[520px]">
+        <h2 className="text-[28px] xs:text-[32px] sm:text-[34px] md:text-[36px] font-bold text-center text-[#F5F5F5]">
           Create Estate Account
         </h2>
 
-        <form className="space-y-[10px] mt-[10px] w-full">
+        <form className="space-y-[12px] xs:space-y-[10px] mt-[12px] xs:mt-[10px] w-full">
 
           {/* Estate Name */}
           <div>
-            <label className="text-[#F5F5F5] text-sm font-medium">Estate Name</label>
-            <div className="relative mt-[6px]">
-              <Home className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]" />
+            <label className="text-[#F5F5F5] text-[13px] xs:text-sm font-medium">Estate Name</label>
+            <div className="relative mt-[4px] xs:mt-[6px]">
+              <Home className="absolute left-[8px] xs:left-[6px] top-1/2 -translate-y-1/2 size-[16px] xs:size-[20px] text-[#BDBDBD]" />
               <input
                 type="text"
                 placeholder="Enter estate name"
-                className="pl-[38px] border text-[#BDBDBD] border-gray-300 rounded-[8px] focus:border-blue-500 h-[40px] w-[426px] bg-transparent indent-[10px]"
+                className=" xs:pl-[38px] border text-[#BDBDBD] border-gray-300 rounded-[8px] focus:border-blue-500 h-[38px] xs:h-[40px] w-full bg-transparent indent-[38px] xs:indent-[10px] text-[13px] xs:text-sm"
                 required
               />
             </div>
@@ -31,13 +31,13 @@ export default function EstateForm() {
 
           {/* Full Name */}
           <div>
-            <label className="text-[#F5F5F5] text-sm font-medium">Full Name</label>
-            <div className="relative mt-[6px]">
-              <User className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]"/>
+            <label className="text-[#F5F5F5] text-[13px] xs:text-sm font-medium">Full Name</label>
+            <div className="relative mt-[4px] xs:mt-[6px]">
+              <User className="absolute left-[8px] xs:left-[6px] top-1/2 -translate-y-1/2 size-[16px] xs:size-[20px] text-[#BDBDBD]" />
               <input
                 type="text"
                 placeholder="Enter full name"
-                className="pl-[38px] border text-[#BDBDBD] border-gray-300 rounded-[8px] focus:border-blue-500 h-[40px] w-[426px] bg-transparent indent-[10px]"
+                className=" xs:pl-[38px] border text-[#BDBDBD] border-gray-300 rounded-[8px] focus:border-blue-500 h-[38px] xs:h-[40px] w-full bg-transparent indent-[38px] xs:indent-[10px] text-[13px] xs:text-sm"
                 required
               />
             </div>
@@ -45,13 +45,13 @@ export default function EstateForm() {
 
           {/* Phone Number */}
           <div>
-            <label className="text-[#F5F5F5] text-sm font-medium">Phone Number</label>
-            <div className="relative mt-[6px]">
-              <Phone className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]" />
+            <label className="text-[#F5F5F5] text-[13px] xs:text-sm font-medium">Phone Number</label>
+            <div className="relative mt-[4px] xs:mt-[6px]">
+              <Phone className="absolute left-[8px] xs:left-[6px] top-1/2 -translate-y-1/2 size-[16px] xs:size-[20px] text-[#BDBDBD]" />
               <input
                 type="tel"
                 placeholder="Enter phone number"
-                className="pl-[38px] pr-3 border border-gray-300 rounded-[8px] focus:border-blue-500 h-[40px] w-[426px] text-[#BDBDBD] bg-transparent indent-[10px]"
+                className=" xs:pl-[38px]  border border-gray-300 rounded-[8px] focus:border-blue-500 h-[38px] xs:h-[40px] w-full text-[#BDBDBD] bg-transparent indent-[38px] xs:indent-[10px] text-[13px] xs:text-sm"
                 required
               />
             </div>
@@ -59,13 +59,13 @@ export default function EstateForm() {
 
           {/* Email */}
           <div>
-            <label className="text-[#F5F5F5] text-sm font-medium">Email Address</label>
-            <div className="relative mt-[6px]">
-              <Mail className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]" />
+            <label className="text-[#F5F5F5] text-[13px] xs:text-sm font-medium">Email Address</label>
+            <div className="relative mt-[4px] xs:mt-[6px]">
+              <Mail className="absolute left-[8px] xs:left-[6px] top-1/2 -translate-y-1/2 size-[8px] xs:size-[20px] text-[#BDBDBD]" />
               <input
                 type="email"
                 placeholder="Enter email address"
-                className="pl-[38px] pr-3 border border-gray-300 rounded-[8px] h-[40px] w-[426px] text-[#BDBDBD] bg-transparent indent-[10px]"
+                className="xs:pl-[38px]  border border-gray-300 rounded-[8px] h-[38px] xs:h-[40px] w-full text-[#BDBDBD] bg-transparent indent-[38px] xs:indent-[10px] text-[13px] xs:text-sm"
                 required
               />
             </div>
@@ -73,31 +73,31 @@ export default function EstateForm() {
 
           {/* Password */}
           <div>
-            <label className="text-[#F5F5F5] text-sm font-medium">Password</label>
-            <div className="relative mt-[6px]">
-              <Lock className="absolute left-[6px] top-[11px] size-5 text-[#BDBDBD]" />
+            <label className="text-[#F5F5F5] text-[13px] xs:text-sm font-medium">Password</label>
+            <div className="relative mt-[4px] xs:mt-[6px]">
+              <Lock className="absolute left-[8px] xs:left-[6px] top-1/2 -translate-y-1/2 size-[16px] xs:size-[20px] text-[#BDBDBD]" />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Create password"
-                className="pl-[38px] pr-10 border border-gray-300 rounded-[8px] focus:border-blue-500 h-[40px] w-[426px] text-[#BDBDBD] bg-transparent indent-[10px]"
+                className="xs:pl-[38px] border border-gray-300 rounded-[8px] focus:border-blue-500 h-[38px] xs:h-[40px] w-full text-[#BDBDBD] bg-transparent indent-[38px] xs:indent-[10px] text-[13px] xs:text-sm"
                 required
               />
               <a
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-[12px] top-[11px]"
+                className="absolute right-[12px] xs:right-[12px] top-1/2 -translate-y-1/2"
               >
-                {showPassword ? <EyeOff className="size-5" /> : <Eye className="size-5" />}
+                {showPassword ? <EyeOff className="size-[16px] xs:size-[20px]" /> : <Eye className="size-[20px] xs:size-[20px]" />}
               </a>
             </div>
           </div>
 
           {/* Remember + Forgot */}
-          <div className="flex justify-between sm:flex-row sm:justify-between sm:items-center text-sm">
-            <label className="flex items-center gap-2 text-[#F5F5F5]">
+          <div className="flex justify-between items-center text-[12px] xs:text-sm">
+            <label className="flex items-center gap-[8px] text-[#F5F5F5]">
               <input
                 type="checkbox"
-                className="cursor-pointer accent-[#F5F5F5] bg-transparent border border-[#F5F5F5] "
+                className="cursor-pointer accent-[#F5F5F5] bg-transparent border border-[#F5F5F5]"
               />
               Remember me
             </label>
@@ -107,13 +107,13 @@ export default function EstateForm() {
           {/* Submit */}
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-white h-[40px] rounded-[8px] font-medium w-full mt-[30px]"
+            className="bg-blue-600 hover:bg-blue-700 text-white h-[38px] xs:h-[40px] rounded-[8px] font-medium w-full mt-6 xs:mt-[30px] text-[13px] xs:text-sm"
           >
             Create Account
           </button>
 
           {/* Switch */}
-          <p className="text-center text-sm pt-2 text-gray-600">
+          <p className="text-center text-[12px] xs:text-sm pt-2 text-gray-600">
             Already have an account?
             <a href="#" className="text-blue-600 font-semibold ml-1">Sign In</a>
           </p>
