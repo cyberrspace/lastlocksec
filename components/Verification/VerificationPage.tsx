@@ -75,7 +75,7 @@ export default function VerificationPage(){
                 bg-[#353535]
                 border-[0.89px] border-[#515151]
                 rounded-[5.34px]
-                text-center text-white text-[16px] font-medium
+                text-center text-[#F5F5F5] text-[16px] font-medium
                 outline-none focus:border-[#1D61E7]
                 transition
               "

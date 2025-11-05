@@ -18,12 +18,12 @@ export default  function TokenPage(){
           {/* Navbar */}
           <div
             className="
-             w-full max-w-[100vw] overflow-x-hidden mx-auto
+             w-full max-w-[100vw]  mx-auto
             "
           >
             <NavTwo/>
           </div>
-           <div className="mt-[50px] flex items-center justify-center">
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
            <TokenForm/>
            </div>
          
