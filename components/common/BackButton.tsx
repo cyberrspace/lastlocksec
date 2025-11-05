@@ -18,7 +18,7 @@ export default function BackButton({ href = "/", text = "Back" }: BackButtonProp
         flex items-center gap-2 
         text-[#2C2C2C] hover:text-[#1D61E7]
         text-[14px] sm:text-[15px] 
-        font-medium transition-all 
+        font-medium transition-all cursor-pointer
       "
     >
       <ArrowLeft className="w-[18px] h-[18px]" />

@@ -33,7 +33,7 @@ export default function VerificationPage(){
     const enteredCode = code.join("");
     if (enteredCode === "000000") {
       setError("");
-      router.push("/");
+      router.push("/token");
     } else {
       setError("Invalid PIN");
     }
@@ -44,7 +44,7 @@ export default function VerificationPage(){
     <main className="w-full max-w-[512px] sm:min-h-[692px]  min-h-screen flex flex-col justify-center        items-center bg-black  px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] overflow-hidden">
           {/* Back Button */}
           <div className="w-full max-w-full sm:max-w-[512px] mb-[8px] sm:mb-[5px]">
-            <BackButton />
+            <BackButton  href="/forgotpassword"/>
           </div>
     
           {/* Form Card */}
@@ -89,7 +89,7 @@ export default function VerificationPage(){
                 )}
 
     
-            <div className="w-full max-w-full sm:max-w-[426px] h-[40px] mt-[20px] mb-[20px] ">
+            <div className="w-full max-w-[306px] sm:max-w-[306px] h-[40px] mt-[20px] mb-[20px] ">
               <Button 
                 onClick={handleVerify}
                 className="w-full bg-[#102DC8] text-[#FFFFFF] h-[38px] xs:h-[40px] sm:h-[43px] text-[14px] xs:text-[16px] rounded-[10px]">

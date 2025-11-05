@@ -11,10 +11,10 @@ export default function verifypage(){
             className="
               flex flex-col 
               w-full 
-              relative"
+              relative h-screen"
           >
             {/* Navbar */}
-            <div className="w-full max-w-[100vw] overflow-x-hidden">
+            <div className="w-full max-w-[100vw] ">
               <SignNav/>
             </div>
     

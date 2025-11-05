@@ -2,7 +2,8 @@
 
 import ContentWrapper from "@/components/common/ContentWrapper";
 import EstateForm from "@/components/EstateForm/EstateForm";
-import NavTwo from "@/components/NavTwo/NavTwo";
+import SignNav from "@/components/NavOne/SignNav";
+
 
 export default  function signupPage(){
  return(
@@ -18,12 +19,12 @@ export default  function signupPage(){
           {/* Navbar */}
           <div
             className="
-             w-full max-w-[100vw] overflow-x-hidden mx-auto
+             w-full max-w-[100vw]  mx-auto
             "
           >
-            <NavTwo/>
+          <SignNav/>
           </div>
-           <div className="mt-[50px] flex items-center justify-center">
+           <div className="mt-[20px] flex items-center justify-center">
             <EstateForm/>
            </div>
          

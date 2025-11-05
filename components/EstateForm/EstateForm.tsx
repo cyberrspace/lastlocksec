@@ -7,13 +7,13 @@ export default function EstateForm() {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <section className="min-h-[600px]  max-w-[512px] sm:min-h-[692px] bg-[#2C2C2C] flex justify-center items-center w-full p-[16px] sm:p-0 rounded-[10px]">
-      <main className="bg-white p-[16px] xs:p-[20px] sm:p-[32px] md:p-[50px] rounded-[12px] flex flex-col justify-start items-center w-full max-w-full xs:max-w-[400px] sm:max-w-[450px] md:max-w-[520px]">
+    <section className="min-h-[512px]  max-w-[512px] sm:min-h-[px] bg-[#2C2C2C] flex justify-center items-center    w-full pl-[16px] pr-[16px] sm:p-0 rounded-[10px] mt-[0px] pt-[0px]">
+      <main className="bg-white pl-[16px] pr-[16px] xs:p-[20px] sm:p-[32px] md:p-[50px] rounded-[12px] flex flex-col justify-start items-center w-full max-w-full xs:max-w-[400px] sm:max-w-[450px] md:max-w-[520px]">
         <h2 className="text-[28px] xs:text-[32px] sm:text-[34px] md:text-[36px] font-bold text-center text-[#F5F5F5]">
           Create Estate Account
         </h2>
 
-        <form className="space-y-[12px] xs:space-y-[10px] mt-[12px] xs:mt-[10px] w-full">
+        <form className="space-y-[3px] xs:space-y-[10px] mt-[12px] xs:mt-[10px] w-full">
 
           {/* Estate Name */}
           <div>
@@ -103,7 +103,7 @@ export default function EstateForm() {
           </button>
 
           {/* Switch */}
-          <p className="text-center text-[12px] xs:text-sm pt-2 text-gray-600">
+          <p className="text-center text-[12px] xs:text-sm  text-gray-600">
            
             <a href="#" className="text-[#FFFFFF] font-semibold ml-1">Sign In</a>
           </p>
