@@ -5,7 +5,7 @@ import { Button } from "../ui/button"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-export default function VerificationPage(){
+export default function TokenForm(){
 
  
 
