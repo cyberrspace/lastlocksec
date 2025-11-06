@@ -52,7 +52,7 @@ export default function TokenForm() {
     setTimeout(() => {
       setLoading(false);
       if (enteredCode === "000000") {
-        router.push("/reset-password"); // <-- change this route to your actual reset password page
+        router.push("/reset"); // <-- change this route to your actual reset password page
       } else {
         setError("Invalid or expired token. Try again.");
       }
@@ -119,13 +119,13 @@ export default function TokenForm() {
         </div>
 
         {/* Resend Link */}
-        <div className="mb-[20px]">
-          <button
+        <div className="mb-[20px] cursor-pointer">
+          <a
             onClick={handleResend}
             className="text-[#FFFFFF] underline hover:text-[#1D61E7] transition"
           >
             Resend
-          </button>
+          </a>
           {resendMessage && (
             <p className="text-[#A0A0A0] text-[12px] mt-2">{resendMessage}</p>
           )}

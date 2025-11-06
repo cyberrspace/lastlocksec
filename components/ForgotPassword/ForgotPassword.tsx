@@ -6,9 +6,9 @@ import { Button } from "../ui/button";
 
 export default function ForgotPassword() {
   const router = useRouter();
-
+   
   return (
-    <main className="w-full max-w-[512px] sm:min-h-[692px]  min-h-screen flex flex-col justify-center items-center bg-black px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] overflow-hidden ">
+    <main className="w-full max-w-[512px] sm:min-h-[692px]  min-h-screen flex flex-col justify-center items-center bg-black px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px]">
       {/* Back Button */}
       <div className="w-full max-w-full sm:max-w-[512px] mb-[8px] sm:mb-[5px]">
         <BackButton href="/signup"  />

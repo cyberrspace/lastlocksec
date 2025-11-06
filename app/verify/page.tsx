@@ -19,7 +19,7 @@ export default function verifypage(){
             </div>
     
             {/* Forgot Password Form Section */}
-            <div className="flex flex-col items-center space-y-4 sm:space-y-6 w-full ">
+       <div className="flex flex-col items-center space-y-[16px] sm:space-y-[24px] w-full max-w-[512px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto justify-center ">
               
               <VerificationPage />
               </div>
