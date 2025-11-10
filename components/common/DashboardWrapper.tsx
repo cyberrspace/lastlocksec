@@ -6,20 +6,27 @@ export default function DashboardWrapper({ children }: { children: ReactNode }) 
   return (
     <div
       className="
-        w-full h-screen 
-        bg-cover bg-center bg-no-repeat 
+        w-full min-h-screen
         flex flex-col
-        px-[15px]
+        bg-cover bg-center bg-no-repeat
         box-border
-        overflow-hidden
+        overflow-x-hidden overflow-y-auto
+        sm:min-h-screen md:min-h-screen lg:min-h-screen xl:min-h-screen
+        px-4 sm:px-6 md:px-8 lg:px-10
       "
-      style={{
+        style={{
         backgroundImage: "url('/icon/Screen-b.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full h-full flex flex-col">{children}</div>
+      <div
+        className="
+          w-full h-auto flex flex-col flex-grow
+          sm:h-auto md:h-auto lg:h-auto
+        ">
+        {children}
+      </div>
     </div>
   );
 }

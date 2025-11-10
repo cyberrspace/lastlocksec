@@ -14,12 +14,12 @@ export default function verifypage(){
               relative h-screen"
           >
             {/* Navbar */}
-            <div className="w-full max-w-[100vw] ">
+            <div className="w-full max-w-[100vw]">
               <SignNav/>
             </div>
     
             {/* Forgot Password Form Section */}
-       <div className="flex flex-col items-center space-y-[16px] sm:space-y-[24px] w-full max-w-[512px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto justify-center ">
+            <div className="flex flex-col items-center space-y-[16px] sm:space-y-[24px] w-full max-w-[512px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto justify-center ">
               
               <VerificationPage />
               </div>
