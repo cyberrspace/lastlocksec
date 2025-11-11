@@ -36,21 +36,24 @@ export default function DashboardNav() {
           className="bg-[#FFFFFF] flex items-center gap-[3px] w-[362px] h-[36px] rounded-[10px] p-[5px] relative"
         >
           {/* Search icon */}
-          <a
-            type="submit"
-            className="text-gray-500 hover:text-[#6E8AFC] transition-colors"
-          >
-            <Search size={18} />
-          </a>
+          <div>
+            <a
+              type="submit"
+              className="text-[#2B3674] hover:text-[#6E8AFC] transition-colors absolute left-[20px] z-10 flex items-center top-1/2 -translate-y-1/2"
+            >
+              <Search size={10} />
+            </a>
 
-          {/* Input */}
-          <input
-            type="search"
-            name="search"
-            placeholder="Search"
-            className="w-[228px] h-[36px] bg-[#F8F8F8] rounded-[30px] px-3 border-none outline-none text-sm"
-          />
+            {/* Input */}
+            <input
+              type="search"
+              name="search"
+              placeholder="Search"
+              className="w-[228px] h-[36px] bg-[#F8F8F8] text-[12px] text-[#8F9BBA] rounded-[30px] px-3 border-none outline-none text-sm indent-[38px] relative"
+            />
 
+          </div>
+         
           {/* Notification icon */}
           <div className=" space-x-[10px] absolute right-[5px] ">
             <a

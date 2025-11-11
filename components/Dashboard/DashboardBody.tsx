@@ -1,8 +1,10 @@
 "use client";
 
+import DashboardChart from "./DashboardChart";
+
 export default function DashboardBody(){
 return(
-  <main className=" px-[16px]">
+  <main className=" px-[16px] space-y-[15px]">
     <section className="flex items-center space-x-[2rem] bg-[#F8F8F8] w-full h-[204px] px-[24px] py-[20px] rounded-[10px]">
       <div>
         <h2 className="font-bold text-[18px]">
@@ -27,6 +29,9 @@ return(
         <p className="text-[12px] font-normal text-[#2C2C2C]">Due collected</p>
       </div>
      
+    </section>
+    <section>
+      <DashboardChart/>
     </section>
   </main>
 )
