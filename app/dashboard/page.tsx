@@ -8,19 +8,25 @@ import DashboardBody from "@/components/Dashboard/DashboardBody";
 export default function Dashboard() {
   return (
     <DashboardWrapper>
-      <main className="w-full">
-        <div className="flex flex-row lg:flex-col gap-2 lg:gap-[10px] ">
+      <main className="flex overflow-hidden ">
+        {/* Sidebar - Fixed */}
+        <aside className="fixed top-[0px] left-[0px] w-[250px] bg-white shadow-md z-50">
           <DashboardSide />
-          <div className=" flex flex-col items-start space-y-4 lg:space-y-[30px] px-4 lg:px-0">
-            <section className="w-full">
-              <DashboardNav />
-            </section>
-            <section className="">
-              <DashboardBody />
-            </section>
-          </div>
+        </aside>
+
+        {/* Main Content Area */}
+        <div className="ml-[250px] flex flex-col flex-1 h-full overflow-y-auto">
+          {/* Navbar (sticky) */}
+          <header className="fixed  w-[1220px] z-40 bg-white shadow-sm">
+            <DashboardNav />
+          </header>
+
+          {/* Body (scrollable) */}
+          <section className="flex-[4px] p-[16px] lg:p-[24px] mt-[8rem]">
+            <DashboardBody />
+          </section>
         </div>
       </main>
     </DashboardWrapper>
-  )
+  );
 }

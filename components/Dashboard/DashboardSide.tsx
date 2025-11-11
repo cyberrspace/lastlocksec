@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function DashboardSide() {
   return (
-    <main className="bg-[#FFFFFF] w-full max-w-[258px] px-[15px] h-full flex flex-col space-y-[30px]">
+    <main className="bg-[#FFFFFF] w-full max-w-[258px] px-[15px] max-h-full flex flex-col space-y-[1rem]">
       <section className="flex">
         <div className="flex items-center gap-[10px] sm:gap-4">
           <Image
@@ -21,7 +21,7 @@ export default function DashboardSide() {
       </section>
 
 
-      <div className="space-y-[8rem]">
+      <div className="space-y-[3rem]">
 
 
         <section className="space-y-[10px]">
@@ -92,7 +92,7 @@ export default function DashboardSide() {
         </section>
 
 
-        <section>
+        <section className="max-h-screen">
           <div className="w-full">
             <div className="flex  gap-[4rem] items-center">
               <p className="font-normal text-[14px] text-[#2C2C2C]">Security app</p>

@@ -1,11 +1,12 @@
 "use client";
 
 import DashboardChart from "./DashboardChart";
+import DashboardTrans from "./DashboardTrans";
 
 export default function DashboardBody(){
 return(
-  <main className=" px-[16px] space-y-[15px]">
-    <section className="flex items-center space-x-[2rem] bg-[#F8F8F8] w-full h-[204px] px-[24px] py-[20px] rounded-[10px]">
+  <main className=" px-[16px] space-y-[15px] max-w-full ">
+    <section className="flex items-center space-x-[2rem] bg-[#F8F8F8]  h-[204px] px-[24px] py-[20px] rounded-[10px] max-w-full">
       <div>
         <h2 className="font-bold text-[18px]">
           Estate info.
@@ -30,8 +31,11 @@ return(
       </div>
      
     </section>
+    <section className="w-full">
+      <DashboardChart />
+    </section>
     <section>
-      <DashboardChart/>
+      <DashboardTrans/>
     </section>
   </main>
 )

@@ -35,7 +35,7 @@ export default function DashboardChart() {
   };
 
   return (
-    <div className="bg-[#F9FAFB] rounded-[12px] p-6 w-full shadow-sm">
+    <div className="bg-[#F9FAFB] rounded-[12px] p-[10px]  shadow-sm px-[5px]">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <h2 className="text-[#1E293B] font-semibold text-[16px]">

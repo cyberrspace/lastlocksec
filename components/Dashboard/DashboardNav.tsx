@@ -24,13 +24,13 @@ export default function DashboardNav() {
   return (
     <nav className="flex items-center justify-between w-full px-[16px] ">
       {/* Left side */}
-      <div>
+      <div className="px-[16px]">
         <p className="text-gray-500 text-[12px] text-[#2C2C2C]">Pages / Dashboard</p>
         <h2 className="text-[30px] font-bold text-[#2C2C2C]">Dashboard</h2>
       </div>
 
       {/* Right side - Search box + icons */}
-      <div className="flex items-center pr-[3rem]">
+      <div className="flex items-center pr-[1rem]">
         <form
           onSubmit={handleSearch}
           className="bg-[#FFFFFF] flex items-center gap-[3px] w-[362px] h-[36px] rounded-[10px] p-[5px] relative"
