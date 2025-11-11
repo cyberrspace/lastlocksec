@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 
-export default function DashboardSide() {
+interface DashboardSideProps {
+  onDashboardClick?: () => void;
+}
+
+export default function DashboardSide({ onDashboardClick }: DashboardSideProps) {
+  
+
   return (
     <main className="bg-[#FFFFFF] w-full max-w-[258px] px-[15px] max-h-full flex flex-col space-y-[1rem]">
       <section className="flex">
@@ -25,7 +31,9 @@ export default function DashboardSide() {
 
 
         <section className="space-y-[10px]">
-          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div 
+            onClick={onDashboardClick} 
+          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/dashboard-i.png"
               alt="locksec logo"
@@ -33,9 +41,9 @@ export default function DashboardSide() {
               height={11}
               className="object-contain w-[32px] h-[32px] sm:w-[40px] sm:h-[40px] md:w-[48px] md:h-[48px] brightness-0 invert-[70%] group-hover:invert-0 group-hover:brightness-100 transition-all duration-300"
             />
-            <p className="text-[#A3AED0] font-bold text-[14px] group-hover:text-[#2164E7] transition-colors duration-300">
+            <a className="text-[#A3AED0] font-bold text-[14px] group-hover:text-[#2164E7] transition-colors duration-300">
               Dashboard
-            </p>
+            </a>
           </div>
 
           <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
