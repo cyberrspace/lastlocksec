@@ -50,7 +50,7 @@ export default function Dashboard() {
         {/* Main Content Area */}
         <div className="ml-[250px] flex flex-col flex-1 h-full overflow-y-auto">
           {/* Navbar (sticky) */}
-          <header className="fixed  w-[1220px] z-40 bg-white shadow-sm">
+          <header className="fixed  w-[1220px] z-30 bg-white shadow-sm">
             <DashboardNav />
           </header>
 
