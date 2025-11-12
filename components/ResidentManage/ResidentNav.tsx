@@ -2,7 +2,7 @@
 
 import { Search, Bell, LogOut } from "lucide-react";
 
-export default function DashboardNav() {
+export default function ResidentNav() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget as HTMLFormElement);
@@ -53,7 +53,7 @@ export default function DashboardNav() {
             />
 
           </div>
-         
+
           {/* Notification icon */}
           <div className=" space-x-[10px] absolute right-[5px] ">
             <a
@@ -71,10 +71,10 @@ export default function DashboardNav() {
               <LogOut size={20} />
             </a>
           </div>
-         
+
         </form>
 
-       
+
       </div>
     </nav>
   );
