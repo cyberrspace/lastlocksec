@@ -2,10 +2,11 @@
 
 export default function SubscriptionOverlay() {
   return (
-    <div className="max-h-[623px] w-[843px] bg-[#FCFBFB] flex items-center justify-center p-[16px]  rounded-[20px]">
+    <div className="fixed inset-[0px] flex items-center justify-center bg-[#000000]/40 z-[9999]">
+    <div className="relative max-h-[623px] w-[843px] bg-[#FCFBFB] flex items-center justify-center p-[16px]  rounded-[20px]">
       <div className=" shadow-lg max-w-[56rem] w-full p-[32px]">
         <button
-          className="absolute top-[16px] right-[16px] text-[#C0C0C0] hover:text-gray-800 text-2xl font-bold"
+          className="absolute top-[16px] right-[16px] text-[#C0C0C0] hover:text-gray-800 text-2xl font-bold border-none bg-transparent text-[32px]" 
           onClick={() => window.dispatchEvent(new Event("closeOverlay"))}
         >
           ×
@@ -59,7 +60,7 @@ export default function SubscriptionOverlay() {
               </ul>
             </div>
 
-            <button className="flex justify-center items-center w-[302px] h-[42px] hover:bg-[#2563EB] text-[#244779] font-semibold py-[12px] px-[16px] rounded-[20px] transition duration-200 border-none bg-transparent">
+            <button className="flex justify-center items-center w-[302px] h-[42px] hover:bg-[#2563EB] text-[#244779] font-semibold py-[12px] px-[16px] rounded-[20px] transition duration-200 border border-[#24477966] bg-transparent absolute bottom-[40px]">
               Get Started for Free
             </button>
           </div>
@@ -108,7 +109,7 @@ export default function SubscriptionOverlay() {
               </ul>
             </div>
 
-            <button className="flex justify-center items-center w-[302px] h-[42px] hover:bg-[#2563EB] text-[#244779] font-semibold py-[12px] px-[16px] rounded-[20px] transition duration-200 border-none bg-transparent">
+            <button className="flex justify-center items-center w-[302px] h-[42px] hover:bg-[#2563EB] text-[#244779] font-semibold py-[12px] px-[16px] rounded-[20px] transition duration-200  bg-transparent border border-[#24477966]">
               Start 14-Day Free Trial
             </button>
           </div>
@@ -121,6 +122,7 @@ export default function SubscriptionOverlay() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
