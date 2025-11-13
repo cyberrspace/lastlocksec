@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-
+import { useRouter } from "next/navigation";
 interface DashboardSideProps {
   onDashboardClick?: () => void;
 }
 
 export default function DashboardSide({ onDashboardClick }: DashboardSideProps) {
-  
+  const router = useRouter(); 
 
   return (
     <main className="bg-[#FFFFFF] w-full max-w-[258px] px-[15px] max-h-full flex flex-col space-y-[1rem]">
@@ -46,7 +46,9 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
             </a>
           </div>
 
-          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div 
+            onClick={() => router.push("/resident")}
+          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/resident-i.png"
               alt="locksec logo"

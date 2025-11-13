@@ -4,12 +4,12 @@ import DashboardWrapper from "@/components/common/DashboardWrapper";
 
 import ResidentSide from "@/components/ResidentManage/ResidentSide";
 import ResidentNav from "@/components/ResidentManage/ResidentNav";
-import ResidentBodyNav from "@/components/ResidentManage/ResidentBodyNav";
+
 import ResidentBody from "@/components/ResidentManage/ResidentBody";
 
 
 
-export default function residentmanagement() {
+export default function resident() {
  
 
  
@@ -36,8 +36,8 @@ export default function residentmanagement() {
 
           {/* Body (scrollable) */}
           <section className="flex-[4px] p-[16px] lg:p-[24px] mt-[8rem]">
-            <ResidentBodyNav/>
-            <ResidentBody />
+           
+               <ResidentBody />
           </section>
         </div>
       </main>

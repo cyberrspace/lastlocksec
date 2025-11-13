@@ -22,7 +22,7 @@ export default function DashboardNav() {
   };
 
   return (
-    <nav className="flex items-center justify-between w-full px-[16px] bg-[#FFFFFF] mt-[0px] top-0 ">
+    <nav className="flex items-center justify-between w-full px-[16px]  mt-[0px] top-0 ">
       {/* Left side */}
       <div className="px-[16px]">
         <p className="text-gray-500 text-[12px] text-[#2C2C2C]">Pages / Dashboard</p>
