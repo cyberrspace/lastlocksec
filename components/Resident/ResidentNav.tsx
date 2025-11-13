@@ -25,8 +25,8 @@ export default function ResidentNav() {
     <nav className="flex items-center justify-between w-full px-[16px]  mt-[0px] top-0 ">
       {/* Left side */}
       <div className="px-[16px]">
-        <p className="text-gray-500 text-[12px] text-[#2C2C2C]">Pages / Resident </p>
-        <h2 className="text-[30px] font-bold text-[#2C2C2C]">Dashboard</h2>
+        <p className="text-gray-500 text-[12px] text-[#2C2C2C]">Pages / Resident Management </p>
+        <h2 className="text-[30px] font-bold text-[#2C2C2C]">Resident Management</h2>
       </div>
 
       {/* Right side - Search box + icons */}

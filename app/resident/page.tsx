@@ -2,15 +2,32 @@
 
 import DashboardWrapper from "@/components/common/DashboardWrapper";
 
-import ResidentSide from "@/components/ResidentManage/ResidentSide";
-import ResidentNav from "@/components/ResidentManage/ResidentNav";
+import ResidentSide from "@/components/Resident/ResidentSide";
+import ResidentNav from "@/components/Resident/ResidentNav";
 
-import ResidentBody from "@/components/ResidentManage/ResidentBody";
+import ResidentBody from "@/components/Resident/ResidentBody";
+import { useState, useEffect } from "react";
+import AddNew from "@/components/Resident/AddNew";
 
 
 
-export default function resident() {
+export default function Resident() {
  
+  const [showOverlay, setShowOverlay] = useState(false);
+  
+    useEffect(() => {
+      const handleClose = () => setShowOverlay(false);
+      window.addEventListener("closeOverlay", handleClose);
+      return () => window.removeEventListener("closeOverlay", handleClose);
+    }, []);
+  
+    const handleResidentClick = () => {
+      setShowOverlay(true);
+    };
+  
+    const handleOverlayClose = () => {
+      setShowOverlay(false);
+    };
 
  
   return (
@@ -21,6 +38,19 @@ export default function resident() {
           <ResidentSide />
         </aside>
       
+       {showOverlay && (
+                <div
+                  className="fixed inset-[0px] bg-black bg-opacity-40 z-40 flex items-center justify-center transition-opacity duration-300"
+                  onClick={handleOverlayClose}
+                >
+                  <div
+                    className="relative z-50 w-full max-w-5xl"
+                    onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside the modal
+                  >
+                    <AddNew  />
+                  </div>
+                </div>
+              )}
     
           
          
@@ -37,7 +67,7 @@ export default function resident() {
           {/* Body (scrollable) */}
           <section className="flex-[4px] p-[16px] lg:p-[24px] mt-[8rem]">
            
-               <ResidentBody />
+            <ResidentBody onResidentClick={handleResidentClick} />
           </section>
         </div>
       </main>

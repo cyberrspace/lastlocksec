@@ -3,8 +3,12 @@
 import { useState, useRef, useEffect } from "react";
 import { MoreVertical, Plus, FileSpreadsheet, FileText } from "lucide-react";
 import Image from "next/image";
+interface ResidentSideProps {
+  onResidentClick?: () => void;
+}
 
-export default function ResidentManagementBody() {
+
+export default function ResidentBody({onResidentClick}: ResidentSideProps) {
   const [filter, setFilter] = useState("Overdues");
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
@@ -96,7 +100,9 @@ export default function ResidentManagementBody() {
             </div>
 
             {/* Add New Resident Button */}
-            <button className="flex items-center justify-center bg-[#2164E7] text-[#FFFFFF] text-[13px] font-medium rounded-[20px] px-[12px] py-[15px] hover:bg-[#1E4FDB] transition w-[180px] h-[38px] border-none">
+            <button
+              onClick={onResidentClick}
+            className="flex items-center justify-center bg-[#2164E7] text-[#FFFFFF] text-[13px] font-medium rounded-[20px] px-[12px] py-[15px] hover:bg-[#1E4FDB] transition w-[180px] h-[38px] border-none">
               <Plus size={16} className="mr-[4px]" />
               Add New Resident
             </button>
