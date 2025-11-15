@@ -2,11 +2,13 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-interface DashboardSideProps {
+
+interface ResidentSideProps {
   onDashboardClick?: () => void;
+  onResidentClick?: () => void;
 }
 
-export default function DashboardSide({ onDashboardClick }: DashboardSideProps) {
+export default function SecuritySide({ onResidentClick }: ResidentSideProps) {
   const router = useRouter(); 
 
   return (
@@ -32,7 +34,7 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
 
         <section className="space-y-[10px]">
           <div 
-            onClick={onDashboardClick} 
+           onClick={()=>router.push("/dashboard")}
           className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/dashboard-i.png"
@@ -47,7 +49,7 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
           </div>
 
           <div 
-            onClick={() => router.push("/resident")}
+            onClick={onResidentClick} 
           className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/resident-i.png"
@@ -61,9 +63,7 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
             </p>
           </div>
 
-          <div 
-            onClick={() => router.push("/paymentdues")}
-          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/Payment-i.png"
               alt="locksec logo"
@@ -76,9 +76,7 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
             </p>
           </div>
 
-          <div
-            onClick={() => router.push("/security")}
-          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/security-i.png"
               alt="locksec logo"

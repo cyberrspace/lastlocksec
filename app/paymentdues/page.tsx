@@ -1,14 +1,16 @@
 "use client";
 
 import DashboardWrapper from "@/components/common/DashboardWrapper";
-import ResidentSide from "@/components/Resident/ResidentSide";
-import ResidentNav from "@/components/Resident/ResidentNav";
-import ResidentBody from "@/components/Resident/ResidentBody";
+
+
 import { useState, useEffect } from "react";
 import AddNew from "@/components/Resident/AddNew";
 import PastPayment from "@/components/Resident/PastPayment";
+import DueSide from "@/components/Dues/DueSide";
+import DueNav from "@/components/Dues/DuesNav";
+import DueBody from "@/components/Dues/DuesBody";
 
-export default function Resident() {
+export default function PaymentDues() {
   const [showAddNew, setShowAddNew] = useState(false);
   const [showPastPayment, setShowPastPayment] = useState(false);
 
@@ -50,17 +52,17 @@ export default function Resident() {
       <main className="flex overflow-hidden">
         {/* Sidebar */}
         <aside className="fixed top-0 left-0 w-[250px] bg-white shadow-md z-30">
-          <ResidentSide />
+          <DueSide />
         </aside>
 
         {/* Main Content */}
         <div className="ml-[250px] flex flex-col flex-1 h-full overflow-y-auto">
           <header className="fixed w-[1220px] z-30 bg-white shadow-sm">
-            <ResidentNav />
+            <DueNav />
           </header>
 
           <section className="flex-[4px] p-[16px] lg:p-[24px] mt-[8rem]">
-            <ResidentBody
+            <DueBody
               onResidentClick={openAddNew}
               onViewPastPayment={openPastPayment}
             />
