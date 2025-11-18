@@ -6,10 +6,12 @@ import DashboardWrapper from "@/components/common/DashboardWrapper";
 import { useState, useEffect } from "react";
 
 import PastPayment from "@/components/Resident/PastPayment";
-import SecurityNav from "@/components/Security/SecurityNav";
-import SecuritySide from "@/components/Security/SecuritySide";
-import SecurityBody from "@/components/Security/SecurityBody";
+
+
 import AddNewSecurity from "@/components/Security/AddNewSecurity";
+import SettingsBody from "@/components/Settings/SettingsBody";
+import SettingsNav from "@/components/Settings/SettingsNav";
+import SettingsSide from "@/components/Settings/SettingsSide";
 
 export default function Resident() {
   const [showAddNew, setShowAddNew] = useState(false);
@@ -53,20 +55,20 @@ export default function Resident() {
       <main className="flex overflow-hidden">
         {/* Sidebar */}
         <aside className="fixed top-0 left-0 w-[250px] bg-white shadow-md z-30">
-          <SecuritySide />
+          <SettingsSide />
         </aside>
 
         {/* Main Content */}
         <div className="ml-[250px] flex flex-col flex-1 h-full overflow-y-auto">
           <header className="fixed w-[1220px] z-30 bg-white shadow-sm">
-            <SecurityNav />
+            <SettingsNav />
           </header>
           
           <section className="flex-[4px] p-[16px] lg:p-[24px] mt-[8rem]">
-              <SecurityBody
-              onResidentClick={openAddNew}
-              onViewPastPayment={openPastPayment}
-            />
+              <SettingsBody
+                onResidentClick={openAddNew}
+                onViewPastPayment={openPastPayment}
+              />
           </section>
         </div>
       </main>

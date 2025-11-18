@@ -25,7 +25,7 @@ interface Personnel {
 
 
 
-export default function SecurityBody({onResidentClick, onViewPastPayment}: ResidentSideProps) {
+export default function SettingsBody({onResidentClick, onViewPastPayment}: ResidentSideProps) {
  
 
   const [personnel, setPersonnel] = useState<Personnel[]>([
