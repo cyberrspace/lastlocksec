@@ -59,8 +59,8 @@ export default function Resident() {
         </aside>
 
         {/* Main Content */}
-        <div className="ml-[250px] flex flex-col flex-1 h-full overflow-y-auto">
-          <header className="fixed w-[1220px] z-30 bg-white shadow-sm">
+        <div className="ml-[250px] flex flex-col flex-1 h-full overflow-y-auto px-[10px]">
+          <header className="fixed w-[1200px] z-30 bg-white shadow-sm">
             <SettingsNav />
           </header>
           

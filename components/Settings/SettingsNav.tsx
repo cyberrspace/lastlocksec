@@ -22,11 +22,11 @@ export default function SettingsNav() {
   };
 
   return (
-    <nav className="flex items-center justify-between w-full px-[16px]  mt-[0px] top-0 ">
+    <nav className="flex items-center justify-between w-full px-[16px]  mt-[0px] top-0 overflow-auto ">
       {/* Left side */}
       <div className="px-[16px]">
-        <p className="text-gray-500 text-[12px] text-[#2C2C2C]">Pages / Security Management </p>
-        <h2 className="text-[30px] font-bold text-[#2C2C2C]">Security Management personnel</h2>
+        <p className="text-gray-500 text-[12px] text-[#2C2C2C]">Pages / Settings </p>
+        <h2 className="text-[30px] font-bold text-[#2C2C2C]">Settings</h2>
       </div>
 
       {/* Right side - Search box + icons */}
