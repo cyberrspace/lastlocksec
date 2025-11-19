@@ -6,21 +6,15 @@ import { Plus, FileSpreadsheet, FileText } from "lucide-react";
 import UpdateCode from "./UpdateCode";
 import DuesUpdate from "./DuesUpdate";
 
-
-
-
-
 interface ResidentSideProps {
   onResidentClick?: () => void;
-  onViewPastPayment?: () => void;  
+  onViewPastPayment?: () => void;
 }
 
-export default function SettingsBody({onResidentClick, onViewPastPayment}: ResidentSideProps) {
- 
-
+export default function SettingsBody({ onResidentClick, onViewPastPayment }: ResidentSideProps) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const [menuPosition,] = useState({ top: 0, left: 0 });
-  const [ ] = useState<string>("All Residents");
+  const [selectedTab, setSelectedTab] = useState<"password" | "dues">("password"); // ADDED
+  const [menuPosition] = useState({ top: 0, left: 0 });
 
   const filterRef = useRef<HTMLDivElement | null>(null);
   const exportRef = useRef<HTMLDivElement | null>(null);
@@ -33,7 +27,6 @@ export default function SettingsBody({onResidentClick, onViewPastPayment}: Resid
         !exportRef.current?.contains(e.target as Node) &&
         !dotsRef.current?.contains(e.target as Node)
       ) {
-       
         setActiveMenu(null);
       }
     };
@@ -44,118 +37,142 @@ export default function SettingsBody({onResidentClick, onViewPastPayment}: Resid
 
   const closeMenu = () => setActiveMenu(null);
 
-  
   return (
     <>
-      <div className="max-w-[1200px] rounded-[10px]  overflow-auto mx-[16px]">
-      
-       
+      <div className="max-w-[1200px] rounded-[10px] overflow-auto mx-[16px]">
 
         {/* Table Section */}
         <section className="flex gap-[20px] px-[16px]">
+
+          {/* LEFT MENU */}
           <div className="w-[290px] h-[506px] bg-[#FFFFFF] p-[5px] ">
-            <p className=" border border-[#EDEDED] p-[10px] ">Updated Password</p>
-            <p className=" border border-[#EDEDED] p-[10px] flex justify-between">Dues <span> <a
-              onClick={onResidentClick}
-              className="  text-[#000000] text-[13px] font-medium ">
-              <Plus size={16} className="mr-[4px]" />
 
-            </a></span></p>
-           </div>
-         <UpdateCode/>
-         <DuesUpdate/>
+            {/* Updated Password */}
+            <p
+              onClick={() => setSelectedTab("password")}
+              className="border border-[#EDEDED] p-[10px] cursor-pointer relative"
+            >
+              {/* GREEN BAR */}
+              {selectedTab === "password" && (
+                <span className="absolute left-0 top-0 h-full w-[4px] bg-[#22c55e]"></span>
+              )}
+              Updated Password
+            </p>
+
+            {/* Dues */}
+            <p
+              onClick={() => setSelectedTab("dues")}
+              className="border border-[#EDEDED] p-[10px] flex justify-between cursor-pointer relative"
+            >
+              {/* GREEN BAR */}
+              {selectedTab === "dues" && (
+                <span className="absolute left-0 top-0 h-full w-[4px] bg-[#22c55e]"></span>
+              )}
+
+              Dues
+              <span>
+                <a
+                  onClick={onResidentClick}
+                  className="text-[#000000] text-[13px] font-medium"
+                >
+                  <Plus size={16} className="mr-[4px]" />
+                </a>
+              </span>
+            </p>
+
+          </div>
+
+          {/* RIGHT SIDE CONTENT — SHOW ONLY ONE AT A TIME */}
+          {selectedTab === "password" && <UpdateCode />}
+          {selectedTab === "dues" && <DuesUpdate />}
+
         </section>
-        
 
-      {/* Overlay Background */}
-      {activeMenu && (
-        <div
-          className="fixed inset-0 bg-[#000000]/40 z-[9999]"
-          onClick={closeMenu}
-        ></div>
-      )}
-
-      {/* Popups */}
-      {activeMenu === "export" && (
-        <div
-          className="absolute z-[10000] bg-white rounded-[8px] shadow-lg border border-[#E2E8F0] py-[8px] w-[150px]"
-          style={{
-            top: menuPosition.top + 5,
-            left: menuPosition.left - 30,
-          }}
-        >
-          <div className="flex items-center gap-[8px] px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer">
-            <FileSpreadsheet size={16} /> Excel
-          </div>
-          <div className="flex items-center gap-[8px] px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer">
-            <FileText size={16} /> PDF
-          </div>
-        </div>
-      )}
-
-      {activeMenu?.startsWith("menu-") && (
-        <div
-          className="absolute z-[10000] bg-white rounded-[8px] shadow-lg border border-[#E2E8F0] py-[8px] w-[180px]"
-          style={{
-            top: menuPosition.top + 5,
-            left: menuPosition.left - 150,
-          }}
-          onClick={(e) => e.stopPropagation()} // Prevent clicks on menu from closing it
-        >
+        {/* Overlay Background */}
+        {activeMenu && (
           <div
-            onClick={() => {
-              onViewPastPayment?.();
-              closeMenu();
-            }}
-            className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
-          >
-            View Past Payment
-          </div>
+            className="fixed inset-0 bg-[#000000]/40 z-[9999]"
+            onClick={closeMenu}
+          ></div>
+        )}
 
-          <div className="px-[10px] py-[6px] text-[13px] text-[#DC2626] hover:bg-[#FEE2E2] cursor-pointer">
-            Disable Resident
+        {/* Popups */}
+        {activeMenu === "export" && (
+          <div
+            className="absolute z-[10000] bg-white rounded-[8px] shadow-lg border border-[#E2E8F0] py-[8px] w-[150px]"
+            style={{
+              top: menuPosition.top + 5,
+              left: menuPosition.left - 30,
+            }}
+          >
+            <div className="flex items-center gap-[8px] px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer">
+              <FileSpreadsheet size={16} /> Excel
+            </div>
+            <div className="flex items-center gap-[8px] px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer">
+              <FileText size={16} /> PDF
+            </div>
           </div>
-        </div>
-      )}
-    
+        )}
 
-      {activeMenu === "filter" && (
-        <div
-          className="absolute z-[10000] bg-white rounded-[8px] shadow-lg border border-[#E2E8F0] py-[8px] w-[150px]"
-          style={{
-            top: menuPosition.top + 5,
-            left: menuPosition.left,
-          }}
-        >
+        {activeMenu?.startsWith("menu-") && (
           <div
-            onClick={() => {
-             
-              closeMenu();
+            className="absolute z-[10000] bg-white rounded-[8px] shadow-lg border border-[#E2E8F0] py-[8px] w-[180px]"
+            style={{
+              top: menuPosition.top + 5,
+              left: menuPosition.left - 150,
             }}
-            className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
+            onClick={(e) => e.stopPropagation()}
           >
-            All Residents
+            <div
+              onClick={() => {
+                onViewPastPayment?.();
+                closeMenu();
+              }}
+              className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
+            >
+              View Past Payment
+            </div>
+
+            <div className="px-[10px] py-[6px] text-[13px] text-[#DC2626] hover:bg-[#FEE2E2] cursor-pointer">
+              Disable Resident
+            </div>
           </div>
+        )}
+
+        {activeMenu === "filter" && (
           <div
-            onClick={() => {
-             
-              closeMenu();
+            className="absolute z-[10000] bg-white rounded-[8px] shadow-lg border border-[#E2E8F0] py-[8px] w-[150px]"
+            style={{
+              top: menuPosition.top + 5,
+              left: menuPosition.left,
             }}
-            className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
           >
-            Overdues
+            <div
+              onClick={() => {
+                closeMenu();
+              }}
+              className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
+            >
+              All Residents
+            </div>
+            <div
+              onClick={() => {
+                closeMenu();
+              }}
+              className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
+            >
+              Overdues
+            </div>
+            <div
+              onClick={() => {
+                closeMenu();
+              }}
+              className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
+            >
+              Active Residents
+            </div>
           </div>
-          <div
-            onClick={() => {
-             
-              closeMenu();
-            }}
-            className="px-[10px] py-[6px] text-[13px] text-[#475569] hover:bg-[#F1F5F9] cursor-pointer"
-          >
-            Active Residents
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </>
   );
