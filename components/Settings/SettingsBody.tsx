@@ -3,6 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 
 import { Plus, FileSpreadsheet, FileText } from "lucide-react";
+import UpdateCode from "./UpdateCode";
+import DuesUpdate from "./DuesUpdate";
+
 
 
 
@@ -51,7 +54,7 @@ export default function SettingsBody({onResidentClick, onViewPastPayment}: Resid
         {/* Table Section */}
         <section className="flex gap-[20px] px-[16px]">
           <div className="w-[290px] h-[506px] bg-[#FFFFFF] p-[5px] ">
-            <p className=" border border-[#EDEDED] p-[10px]">Updated Password</p>
+            <p className=" border border-[#EDEDED] p-[10px] ">Updated Password</p>
             <p className=" border border-[#EDEDED] p-[10px] flex justify-between">Dues <span> <a
               onClick={onResidentClick}
               className="  text-[#000000] text-[13px] font-medium ">
@@ -59,54 +62,8 @@ export default function SettingsBody({onResidentClick, onViewPastPayment}: Resid
 
             </a></span></p>
            </div>
-
-          <div className="w-full h-[506px] bg-[#FFFFFF] px-[15px] space-y-[10px] pl-[20px] ">
-             <div className="pt-[20px]">
-              <p className="font-bold text-[16px] text-[#2A224F]">Update password</p>
-              <div className="w-[600px]  border-1"></div>
-             </div>
-            <div className="w-[574px] border-[#E6E6E6] text-[#E6E6E6]"></div>
-            <section className="space-y-[5rem]">
-              <div className="space-y-[20px]"> 
-                <div className="">
-                  <label htmlFor="" className="space-y-[10px]">
-                    <div> <span>Old password</span></div>
-                    <input type="text"
-                      placeholder="Enter your old password"
-                      className="w-[372px] h-[39px] rounded-[5px] placeholder:pl-[10px] border-[#D8DAE5]"
-                    />
-                  </label>
-                </div>
-
-                <div className="">
-                  <label htmlFor="" className="space-y-[10px]">
-                    <div> <span>New password</span></div>
-                    <input type="text"
-                      placeholder="Enter your new password"
-                      className="w-[372px] h-[39px] rounded-[5px] placeholder:pl-[10px] border-[#D8DAE5]"
-                    />
-                  </label>
-                </div>
-
-                <div className="">
-                  <label htmlFor="" className="space-y-[10px]">
-                    <div> <span>New password</span></div>
-                    <input type="text"
-                      placeholder=" Re-enter your new password"
-                      className="w-[372px] h-[39px] rounded-[5px] placeholder:pl-[10px] border-[#D8DAE5]"
-                    />
-                  </label>
-                </div>
-              </div>
-             
-              <button className="w-[372px] h-[43px] bg-[#102DC8] rounded-[5px]">
-                Updated Password
-              </button>
-             
-            </section>
-           
-          
-          </div>
+         <UpdateCode/>
+         <DuesUpdate/>
         </section>
         
 
