@@ -45,41 +45,47 @@ export default function SettingsBody({ onResidentClick, onViewPastPayment }: Res
         <section className="flex gap-[20px] px-[16px]">
 
           {/* LEFT MENU */}
-          <div className="w-[290px] h-[506px] bg-[#FFFFFF] p-[5px] ">
+          <div className="w-[290px] h-[506px] bg-[#FFFFFF] p-[5px]">
 
             {/* Updated Password */}
-            <p
-              onClick={() => setSelectedTab("password")}
-              className="border border-[#EDEDED] p-[10px] cursor-pointer relative"
-            >
-              {/* GREEN BAR */}
-              {selectedTab === "password" && (
-                <span className="absolute left-0 top-0 h-full w-[4px] bg-[#22c55e]"></span>
-              )}
-              Updated Password
-            </p>
+            <div className="my-[10px]">
 
-            {/* Dues */}
-            <p
-              onClick={() => setSelectedTab("dues")}
-              className="border border-[#EDEDED] p-[10px] flex justify-between cursor-pointer relative"
-            >
-              {/* GREEN BAR */}
-              {selectedTab === "dues" && (
-                <span className="absolute left-0 top-0 h-full w-[4px] bg-[#22c55e]"></span>
-              )}
+              <p
+                onClick={() => setSelectedTab("password")}
+                className={`relative cursor-pointer p-3 pb-[10px]  items-start flex justify-between border-b border-[#EDEDED] ${selectedTab === "password" ? "text-blue-600 font-medium" : ""
+                  }`}
+              >
+                {/* BLUE VERTICAL LINE */}
+                {selectedTab === "password" && (
+                  <span className="absolute left-0 h-full  top-0 bottom-0 w-[3px] bg-[#2563EB]"></span>
+                )}
+                Update Password
+              </p>
 
-              Dues
-              <span>
-                <a
-                  onClick={onResidentClick}
-                  className="text-[#000000] text-[13px] font-medium"
-                >
-                  <Plus size={16} className="mr-[4px]" />
-                </a>
-              </span>
-            </p>
+              {/* DUES TAB */}
+              <p
+                onClick={() => setSelectedTab("dues")}
+                className={`relative cursor-pointer space-x-[10px] mb-[10px]  pb-[10px]  items-start flex justify-between border-b border-[#EDEDED] ${selectedTab === "dues" ? "text-blue-600 font-medium" : ""
+                  }`}
+              >
+                {/* BLUE VERTICAL LINE */}
+                {selectedTab === "dues" && (
+                  <span className="absolute left-0 top-0 bottom-0 h-full   w-[3px] bg-[#2563EB]"></span>
+                )}
+                <span>Dues</span> 
+                <span>
+                  <a
+                    onClick={onResidentClick}
+                    className="text-[#000000] text-[13px] font-medium"
+                  >
+                    <Plus size={16} className="mr-[4px]" />
+                  </a>
+                </span>
 
+              </p>
+
+            </div>
+           
           </div>
 
           {/* RIGHT SIDE CONTENT — SHOW ONLY ONE AT A TIME */}
