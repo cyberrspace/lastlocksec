@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Switch } from "@/components/ui/switch";
+import DuesTable from "./DuesTable";
 
 export default function DuesUpdate() {
   const [accessCode, setAccessCode] = useState(false);
@@ -9,7 +10,7 @@ export default function DuesUpdate() {
   return (
 
     <div className="w-full h-[506px] bg-[#FFFFFF] px-[15px] space-y-[10px] pl-[20px] ">
-      <div className="pt-[20px]">
+      <div className="pt-[20px] w-[385px]">
         <h2 className="text-[16px] text-[#2A224F] font-bold ">Access Code</h2>
         <div className="flex items-center justify-between">
          
@@ -30,7 +31,7 @@ export default function DuesUpdate() {
 
         </div>
       </div>
-     
+      <DuesTable/>
      
 
 

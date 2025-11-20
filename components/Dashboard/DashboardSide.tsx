@@ -117,7 +117,7 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
             </div>
 
             <div className="font-normal text-[14px] text-[#2C2C2C] max-w-[200px] break-words italic">
-              <p>www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</p>
+              <a href="">www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</a>
             </div>
           </div>
 
@@ -129,7 +129,7 @@ export default function DashboardSide({ onDashboardClick }: DashboardSideProps) 
             </div>
 
             <div className="font-normal text-[14px] text-[#2C2C2C] max-w-[200px] break-words italic">
-              <p>www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</p>
+              <a href="">www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</a>
             </div>
           </div>
         </section>

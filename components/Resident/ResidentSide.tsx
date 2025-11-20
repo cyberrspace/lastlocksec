@@ -50,6 +50,7 @@ export default function ResidentSide({ onResidentClick }: ResidentSideProps) {
 
           <div 
             onClick={onResidentClick} 
+           
           className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/resident-i.png"
@@ -63,7 +64,9 @@ export default function ResidentSide({ onResidentClick }: ResidentSideProps) {
             </p>
           </div>
 
-          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div
+            onClick={() => router.push("/paymentdues")}
+          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/Payment-i.png"
               alt="locksec logo"
@@ -76,7 +79,9 @@ export default function ResidentSide({ onResidentClick }: ResidentSideProps) {
             </p>
           </div>
 
-          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div
+            onClick={() => router.push("/security")}
+          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/security-i.png"
               alt="locksec logo"
@@ -89,7 +94,9 @@ export default function ResidentSide({ onResidentClick }: ResidentSideProps) {
             </p>
           </div>
 
-          <div className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
+          <div
+            onClick={() => router.push("/settings")}
+          className="flex items-center gap-[10px] max-w-[200px] cursor-pointer rounded-[4.45px] bg-white hover:shadow-[0px_2.28px_22.75px_0px_#00000014] transition-all duration-300 group">
             <Image
               src="/icon/settings-i.png"
               alt="locksec logo"
@@ -113,7 +120,7 @@ export default function ResidentSide({ onResidentClick }: ResidentSideProps) {
             </div>
 
             <div className="font-normal text-[14px] text-[#2C2C2C] max-w-[200px] break-words italic">
-              <p>www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</p>
+              <a href="">www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</a>
             </div>
           </div>
 
@@ -125,7 +132,7 @@ export default function ResidentSide({ onResidentClick }: ResidentSideProps) {
             </div>
 
             <div className="font-normal text-[14px] text-[#2C2C2C] max-w-[200px] break-words italic">
-              <p>www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</p>
+              <a href="">www.locksec.app/56373securityiffuvyffugddgkjlnkgdyffhgjbkob</a>
             </div>
           </div>
         </section>
