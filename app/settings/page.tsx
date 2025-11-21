@@ -8,36 +8,36 @@ import { useState, useEffect } from "react";
 import PastPayment from "@/components/Resident/PastPayment";
 
 
-import AddNewSecurity from "@/components/Security/AddNewSecurity";
+import AddNewDue from "@/components/Settings/AddNewDue";
 import SettingsBody from "@/components/Settings/SettingsBody";
 import SettingsNav from "@/components/Settings/SettingsNav";
 import SettingsSide from "@/components/Settings/SettingsSide";
 
 export default function Resident() {
-  const [showAddNew, setShowAddNew] = useState(false);
+  const [showAddNewDue, setShowAddNewDue] = useState(false);
   const [showPastPayment, setShowPastPayment] = useState(false);
 
   useEffect(() => {
     const handleClose = () => {
-      setShowAddNew(false);
+      setShowAddNewDue(false);
       setShowPastPayment(false);
     };
     window.addEventListener("closeOverlay", handleClose);
     return () => window.removeEventListener("closeOverlay", handleClose);
   }, []);
 
-  const openAddNew = () => setShowAddNew(true);
+  const openAddNew = () => setShowAddNewDue(true);
   const openPastPayment = () => setShowPastPayment(true);
 
   const closeOverlay = () => {
-    setShowAddNew(false);
+    setShowAddNewDue(false);
     setShowPastPayment(false);
   };
 
   return (
     <DashboardWrapper>
       {/* POPUP OVERLAY — should be here */}
-      {(showAddNew || showPastPayment) && (
+      {(showAddNewDue || showPastPayment) && (
         <div
           className="fixed inset-0 bg-black bg-opacity-40 z-40 flex items-center justify-center"
           onClick={closeOverlay}
@@ -46,7 +46,7 @@ export default function Resident() {
             className="relative z-50 w-full max-w-5xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {showAddNew && <AddNewSecurity />}
+            {showAddNewDue && <AddNewDue />}
             {showPastPayment && <PastPayment />}
           </div>
         </div>
