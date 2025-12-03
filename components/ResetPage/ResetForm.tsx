@@ -4,9 +4,15 @@ import BackButton from "../common/BackButton";
 import { Eye, EyeOff, Lock } from "lucide-react";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import { resetPassword } from "@/services/estate";
+import { getAxiosErrorMessage } from "@/lib/getAxiosError";
+import { useEffect } from "react";
 
 export default function ResetForm() {
   const router = useRouter();
+ 
+  
+  const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -17,6 +23,18 @@ export default function ResetForm() {
     password: "",
     confirmPassword: ""
   });
+
+  useEffect(() => {
+    // optional: if you want to pre-fill or validate email presence
+    const savedEmail = localStorage.getItem("resetEmail");
+    const savedToken = localStorage.getItem("resetToken");
+    // You can show an error and redirect back if missing
+    if (!savedEmail || !savedToken) {
+      // token flow wasn't followed — redirect to forgot password
+      // router.push("/forgotpassword");
+    }
+  }, []);
+
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -56,15 +74,44 @@ export default function ResetForm() {
     return !newErrors.password && !newErrors.confirmPassword;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      // API call to reset the password
-      console.log("Password reset form submitted:", formData);
+    if (!validateForm()) return;
 
-      //  success page or login page
-      router.push("/dashboard");
+    const resetToken = localStorage.getItem("resetToken");
+    const email = localStorage.getItem("resetEmail");
+
+    if (!resetToken || !email) {
+      setErrors((p) => ({
+        ...p,
+        password: "Missing token or email. Start reset process again."
+      }));
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      // ✔ FIXED: correct payload
+      await resetPassword({
+        email,
+        token: resetToken,
+        password: formData.password
+      });
+
+      setLoading(false);
+
+      localStorage.removeItem("resetToken");
+      localStorage.removeItem("resetEmail");
+
+      router.push("/");
+    } catch (err: unknown) {
+      setLoading(false);
+      setErrors((p) => ({
+        ...p,
+        password: getAxiosErrorMessage(err, "Failed to reset password")
+      }));
     }
   };
 
@@ -213,9 +260,11 @@ export default function ResetForm() {
         <div className="w-full max-w-full sm:max-w-[426px] h-[40px] mt-[20px] mb-[20px]">
           <Button
             type="submit"
+            disabled={loading}
+            aria-busy={loading}
             className="w-full max-w-[426px] text-[#FFFFFF] bg-[#102DC8] h-[38px] xs:h-[40px] sm:h-[43px] text-[14px] xs:text-[16px] rounded-[10px] hover:bg-[#0d24a6] transition-colors"
           >
-            Reset Password
+            {loading ? "Resetting..." : "Reset Password"}
           </Button>
         </div>
 

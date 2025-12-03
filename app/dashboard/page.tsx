@@ -39,7 +39,7 @@ export default function Dashboard() {
           >
             <div
               className="relative z-50 w-full max-w-5xl"
-              onClick={(e) => e.stopPropagation()} // prevent closing when clicking inside the modal
+              onClick={(e) => e.stopPropagation()} 
             >
               <SubscriptionOverlay />
             </div>

@@ -4,7 +4,7 @@ import ContentWrapper from "@/components/common/ContentWrapper"
 import SignNav from "@/components/NavOne/SignNav"
 import VerificationPage from "@/components/Verification/VerificationPage"
 
-export default function verifypage(){
+export default function Verify(){
  return(
   <ContentWrapper>
     <section

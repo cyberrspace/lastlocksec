@@ -6,7 +6,7 @@ import ContentWrapper from "@/components/common/ContentWrapper";
 import SignNav from "@/components/NavOne/SignNav";
 import ResetForm from "@/components/ResetPage/ResetForm";
 
-export default function resetPage() {
+export default function Reset() {
   return (
     <ContentWrapper>
       <section
