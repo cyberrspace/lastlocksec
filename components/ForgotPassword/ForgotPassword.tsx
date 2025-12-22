@@ -22,19 +22,20 @@ export default function ForgotPassword() {
 
       const res = await forgotPassword(email);
 
-      // backend returns: data: "306231"
-      console.log("RESET CODE:", res?.data);
+      const resetToken = res.data.data; // "306231"
 
-      // Save email so verify page knows which account to verify
+      // Persist for next steps
       localStorage.setItem("resetEmail", email);
+      localStorage.setItem("resetToken", resetToken);
 
-      router.push("/Token");
+      router.push("/Token"); // go to token verification page
     } catch (err: unknown) {
       setErrorMsg(getAxiosErrorMessage(err, "Failed to send reset code"));
     } finally {
       setLoading(false);
     }
   };
+
 
   return (
     <main className="w-full max-w-[512px] sm:min-h-[692px]  min-h-screen flex flex-col justify-center items-center bg-black px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px]">

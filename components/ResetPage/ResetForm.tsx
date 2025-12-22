@@ -5,6 +5,8 @@ import { Eye, EyeOff, Lock } from "lucide-react";
 import { Button } from "../ui/button";
 import { useState } from "react";
 import { resetPassword } from "@/services/estate";
+
+
 import { getAxiosErrorMessage } from "@/lib/getAxiosError";
 import { useEffect } from "react";
 
@@ -25,13 +27,12 @@ export default function ResetForm() {
   });
 
   useEffect(() => {
-    // optional: if you want to pre-fill or validate email presence
+    
     const savedEmail = localStorage.getItem("resetEmail");
     const savedToken = localStorage.getItem("resetToken");
-    // You can show an error and redirect back if missing
+    
     if (!savedEmail || !savedToken) {
-      // token flow wasn't followed — redirect to forgot password
-      // router.push("/forgotpassword");
+      
     }
   }, []);
 
@@ -80,12 +81,11 @@ export default function ResetForm() {
     if (!validateForm()) return;
 
     const resetToken = localStorage.getItem("resetToken");
-    const email = localStorage.getItem("resetEmail");
 
-    if (!resetToken || !email) {
+    if (!resetToken) {
       setErrors((p) => ({
         ...p,
-        password: "Missing token or email. Start reset process again."
+        password: "Missing reset token. Please restart password reset."
       }));
       return;
     }
@@ -93,25 +93,22 @@ export default function ResetForm() {
     try {
       setLoading(true);
 
-      // ✔ FIXED: correct payload
       await resetPassword({
-        email,
-        token: resetToken,
-        password: formData.password
+        resetToken,
+        newPassword: formData.password
       });
-
-      setLoading(false);
 
       localStorage.removeItem("resetToken");
       localStorage.removeItem("resetEmail");
 
       router.push("/");
     } catch (err: unknown) {
-      setLoading(false);
       setErrors((p) => ({
         ...p,
         password: getAxiosErrorMessage(err, "Failed to reset password")
       }));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -272,3 +269,6 @@ export default function ResetForm() {
     </main>
   );
 }
+
+
+

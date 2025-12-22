@@ -30,15 +30,17 @@ export default function SignForm() {
       const res = await loginEstate({ email, password });
 
 
-      const token = res?.data?.token;
-      const estate = res?.data?.estate;
+      const token = res.data.data.token;
+      const estate = res.data.data.estate;
+
 
       if (!token) {
         throw new Error("No token returned from server");
       }
 
       // Save token + user in LOCALSTORAGE
-      localStorage.setItem("estateToken", token);
+      localStorage.setItem("authToken", token);
+
       localStorage.setItem("estateUser", JSON.stringify(estate));
 
       router.push("/Dashboard"); // redirect

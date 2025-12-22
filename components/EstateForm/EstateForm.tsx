@@ -4,6 +4,8 @@ import { Mail, Lock, User, Phone, Home, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { registerEstate } from "@/services/estate";
 import { useRouter } from "next/navigation";
+import axios from "axios";
+
 
 export default function EstateForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,32 +34,40 @@ export default function EstateForm() {
     setSuccessMsg("");
 
     try {
-      const res = await registerEstate(formData);
+      const res = await registerEstate({
+        estateName: formData.estateName.trim(),
+        fullName: formData.fullName.trim(),
+        phoneNumber: formData.phoneNumber.trim(),
+        email: formData.email.trim(),
+        password: formData.password,
+      });
 
-      console.log("REGISTER RESPONSE:", res);
+      const estate = res.data.data;
 
-      // SAVE EMAIL + TOKEN FOR VERIFY PAGE
-      localStorage.setItem("pendingEmail", res.data.email);
-      localStorage.setItem("pendingToken", res.data.verificationToken);
+      // ✅ Save for verification screen
+      localStorage.setItem("pendingEmail", estate.email);
+      localStorage.setItem("pendingToken", estate.verificationToken);
 
       setSuccessMsg("Estate registered successfully!");
 
-      // REDIRECT TO VERIFY PAGE
-      router.push("/Verify");
-   
+      // ✅ Backend already sends verification code to email
+      router.push("/verify");
     } catch (err: unknown) {
-      let message = "Registration failed";
+      let message = "Registration failed. Please try again.";
 
-      if (err && typeof err === "object" && "response" in err) {
-        const axiosErr = err as { response?: { data?: { message?: string } } };
-        message = axiosErr.response?.data?.message || message;
+      if (axios.isAxiosError(err)) {
+        message = err.response?.data?.message || message;
       } else if (err instanceof Error) {
         message = err.message;
       }
 
       setErrorMsg(message);
+    } finally {
+      setLoading(false);
     }
   };
+
+  
 
   return (
     <section className="min-h-[512px] max-w-[512px] bg-[#2C2C2C] flex justify-center items-center w-full pl-[16px] pr-[16px] rounded-[10px]">

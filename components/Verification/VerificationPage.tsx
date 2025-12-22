@@ -5,6 +5,8 @@ import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { verifyEstate, resendVerification } from "@/services/estate";
+
+
 import { getAxiosErrorMessage } from "@/lib/getAxiosError";
 
 
@@ -24,6 +26,9 @@ export default function VerificationPage() {
       const interval = setInterval(() => setTimer((t) => t - 1), 1000);
       return () => clearInterval(interval);
     }
+   
+    
+
   }, [timer]);
 
   const email = typeof window !== "undefined" ? localStorage.getItem("pendingEmail") : "";

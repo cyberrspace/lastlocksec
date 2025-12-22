@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 import { verifyResetToken } from "@/services/estate";
 import { getAxiosErrorMessage } from "@/lib/getAxiosError";
+import { forgotPassword } from "@/services/estate";
+
 
 export default function TokenForm() {
   const router = useRouter();
@@ -49,6 +51,7 @@ export default function TokenForm() {
   };
 
   // Verify token
+  // Verify token
   const handleVerify = async () => {
     const enteredCode = code.join("");
 
@@ -61,34 +64,53 @@ export default function TokenForm() {
       setLoading(true);
       setError("");
 
-      const res = await verifyResetToken(email, enteredCode);
+      const res = await verifyResetToken(enteredCode);
 
-      setLoading(false);
-
-      if (res?.success) {
-        // Save token so the reset page can use it
+      if (res.data.success) {
         localStorage.setItem("resetToken", enteredCode);
-        // also ensure email is saved (forgot page should have saved it)
+
         if (email) localStorage.setItem("resetEmail", email);
 
-        router.push("/Reset"); // or "/Reset" depending on your route
+        router.push("/resetpage");
       } else {
         setError("Invalid or expired token.");
       }
     } catch (err: unknown) {
-      setLoading(false);
       setError(getAxiosErrorMessage(err, "Invalid or expired token."));
+    } finally {
+      setLoading(false);
     }
   };
 
+
+
+
   // Resend token
-  const handleResend = () => {
-    setResendMessage("Resending token...");
-    setTimeout(() => {
+  const handleResend = async () => {
+    try {
+      setError("");
+      setResendMessage("Resending token...");
+
+      const savedEmail = localStorage.getItem("resetEmail");
+
+      if (!savedEmail) {
+        setResendMessage("");
+        setError("Email not found. Please restart password reset.");
+        return;
+      }
+
+      await forgotPassword(savedEmail);
+
       setResendMessage("A new token has been sent to your email.");
+
+      // Auto-clear message after 4s
       setTimeout(() => setResendMessage(""), 4000);
-    }, 1500);
+    } catch (err: unknown) {
+      setResendMessage("");
+      setError(getAxiosErrorMessage(err, "Failed to resend token."));
+    }
   };
+
 
   return (
     <main className="w-full max-w-[512px] sm:min-h-[692px] min-h-screen flex flex-col justify-center items-center bg-black px-[16px] sm:px-[24px] md:px-[32px] lg:px-[40px] overflow-hidden">
